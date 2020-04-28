@@ -1,0 +1,32 @@
+.org 0x000
+LOAD MQ, M(input)
+MUL M(const_1)
+LOAD MQ
+STOR M(0x100)
+RSH
+STOR M(0x101)
+laco:
+    LOAD M(0x100)
+    DIV M(0x101)
+    LOAD MQ
+    ADD M(0x101)
+    RSH
+    STOR M(0x101)
+    LOAD M(cont)
+    SUB |M(n1)|
+    STOR M(cont)
+    JUMP+ M(laco)
+LOAD M(0x101)
+JUMP M(0x400)
+
+.org 0x105
+input:
+    .word 0000000034
+
+.org 0x151
+const_1:
+    .word 0000000010
+n1:
+    .word 0000000001
+cont:
+    .word 0000000009

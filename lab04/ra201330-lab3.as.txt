@@ -1,0 +1,45 @@
+.org 0x000
+LOAD M(tamanho)
+SUB M(cont)
+loop:
+    STOR M(tamanho)
+    LOAD M(vet1)
+    STA M(0x003,28:39)
+    LOAD M(vet2)
+    STA M(0x004, 8:19)
+    LOAD MQ, M(0x100)
+    MUL M(0x101)
+    LOAD MQ
+    ADD M(soma)
+    STOR M(soma)
+    LOAD M(vet1)
+    ADD M(cont)
+    STOR M(vet1)
+    LOAD M(vet2)
+    ADD M(cont)
+    STOR M(vet2)
+    LOAD M(tamanho)
+    SUB M(cont)
+    STOR M(tamanho)
+    JUMP+ M(loop, 20:39)
+LOAD M(0x050)
+JUMP M(0x400)
+
+
+
+.org 0x050
+soma:
+    .skip 1
+
+
+.org 0x060
+cont:
+    .word 0000000001
+
+.org 0x3FD
+vet1:
+    .skip 1
+vet2:
+    .skip 1
+tamanho:
+    .skip 1

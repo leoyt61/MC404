@@ -1,0 +1,41 @@
+# Insert your memory map here
+#conteudo de 105 para MQ
+#multiplicar MQ por conteudo de 151
+000 09 105 0B 151
+
+#transferir MQ para AC
+#armazenar AC em 100 (y)
+001 0A 000 21 100
+
+#dividir AC por 2
+#armazenar AC em 101 (k)
+002 15 000 21 101
+
+#conteudo de 100 para AC
+#dividir AC por conteudo de 101
+003 01 100 0C 101
+
+#transferir MQ para AC
+#somar AC com 101 (k)
+004 0A 000 05 101
+
+#divide AC por 2
+#armazenar AC em 101 (k)
+005 15 000 21 101
+
+#conteudo de 153 para AC
+#subtrai AC por 1
+006 01 153 08 152
+
+#armazenar AC em 153
+#pula para endereco 003
+007 21 153 0F 003
+
+#transferir 101 para AC
+#pular para 400
+008 01 101 0D 400
+
+105 00 000 00 034
+151 00 000 00 00A
+152 00 000 00 001
+153 00 000 00 009
