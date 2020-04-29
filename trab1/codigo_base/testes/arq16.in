@@ -1,6 +1,0 @@
-# Arquivo 16
-.set VINTE 20
-
-.org 0x200
-
-.wfill 40 VINTE
