@@ -43,6 +43,7 @@ O ligador irá ler diversos arquivos-objeto como entrada, ligá-los entre si, e 
 
 Figura 1: O processo de compilação de um programa utilizando as ferramentas da GNU.
 
+![](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/labs/lab01/framework.png)
 
 ## Exercício
 
@@ -100,8 +101,9 @@ O parâmetro -L não adiciona módulos ao seu programa, mas apenas especifica um
 
 Note que o gcc é um programa que invoca outros programas por você e já provê os parâmetros corretos para o ligador (ld). Nesse caso, como estamos contruindo o programa sem o auxílio do gcc, nós precisamos passar todos os módulos adicionais que devem ser ligados ao seu executável para que ele funcione. Na dúvida, você pode adicionar a flag -v na linha de comando do gcc para visualizar todos os comandos executados pelo gcc durante a compilação. Na disciplina, quando estiver criando programas diretamente em linguagem de montagem (arquivos .s), você pode usar apenas as ferramentas as e ld, sem a necessidade do gcc. O arquivo saida.x será o programa executável e pode ser executado com o comando:
 
+```
    ./saida.x
-
+```
 ## GNU makefile
 
 O processo de desenvolvimento de software envolve diversas iterações de correções de bugs e recompilações. Entretanto, muitos destes projetos possuem uma quantidade grande de arquivos de programa e a compilação de todos os arquivos é um processo lento. Os arquivos .o precisam ser ligados novamente para formar o novo binário, no entanto, apenas os arquivos modificados precisam ser recompilados. Dessa forma é importante ter um mecanismo automático para recompilar apenas os arquivos necessários. Para isso, existe uma modalidade de script específica para automatizar a compilação de softwares. O GNU makefile é um exemplo largamente utilizado no mundo GNU/Linux.
