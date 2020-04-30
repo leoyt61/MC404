@@ -26,11 +26,11 @@ usuario@maquina$ gcc ola.c -o ola.x
 
 O **gcc** irá compilar o programa fonte ola.c produzindo o programa executável ola.x. O programa executável é uma representação do programa pronta para ser executada pelo sistema. Ele possui trechos de código em linguagem de máquina (prontos para serem executados pelo processador), informações sobre o ponto de entrada do programa (a primeira função que deve ser chamada ao iniciar-se a execução), as constantes do programa e outras informações. Para executar este programa basta digitar o caminho completo do executável (pode ser ./ se estiver no mesmo diretório) e teclar ENTER. Por exemplo:
 
-`
+```
   usuario@maquina$ ./ola.x
   Ola!
   usuario@maquina$
-`
+```
 
 Os passos acima sugerem que o programa gcc converteu o programa em linguagem de alto nível (linguagem C) diretamente para um programa em linguagem de máquina. Entretanto, o gcc é na verdade um programa que articula a chamada de diversos outros programas para realizar a compilação do código fonte. Nesta disciplina, você irá se familiarizar com a construção de softwares em nível mais baixo do que o da linguagem C. Para isso, você deve entender quais as etapas realizadas pelo gcc até chegar na linguagem de máquina, aquela que realmente é entendida pelo processador no momento de executar seu programa.
 
@@ -102,7 +102,7 @@ Note que o gcc é um programa que invoca outros programas por você e já provê
 
    ./saida.x
 
-GNU makefile
+## GNU makefile
 
 O processo de desenvolvimento de software envolve diversas iterações de correções de bugs e recompilações. Entretanto, muitos destes projetos possuem uma quantidade grande de arquivos de programa e a compilação de todos os arquivos é um processo lento. Os arquivos .o precisam ser ligados novamente para formar o novo binário, no entanto, apenas os arquivos modificados precisam ser recompilados. Dessa forma é importante ter um mecanismo automático para recompilar apenas os arquivos necessários. Para isso, existe uma modalidade de script específica para automatizar a compilação de softwares. O GNU makefile é um exemplo largamente utilizado no mundo GNU/Linux.
 
