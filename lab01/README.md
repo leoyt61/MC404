@@ -1,24 +1,24 @@
-#Atividade de Laboratório 1
+# Atividade de Laboratório 1
 
-##Objetivos
+## Objetivos
 
 O objetivo desta atividade é a familiarização com as ferramentas e o ambiente de trabalho da disciplina.
 
 
-##Descrição
+## Descrição
 
 Este documento contém informações sobre como funciona o processo de compilação de software com mais detalhes. Ele também o auxiliará na tarefa de organizar e automatizar um processo de compilação que envolve várias etapas. Neste processo, você irá perceber que o programa fica gradativamente mais próximo da linguagem de máquina até o momento em que um arquivo com as instruções que o processador irá executar é criado, o executável.
 
 Como estudo de caso, crie um arquivo com um programa em código C de nome ola.c. O conteúdo do arquivo deve ser:
 
-'
+```
   #include <stdio.h>
   
   int main () {
     printf("Ola!\n");
     return 0;
   }
-'
+```
 
 Para compilar o programa C apresentado, a abordagem mais simples é utilizar, em um terminal do linux, a seguinte linha de comando para invocar o programa gcc:
 
@@ -26,16 +26,16 @@ usuario@maquina$ gcc ola.c -o ola.x
 
 O **gcc** irá compilar o programa fonte ola.c produzindo o programa executável ola.x. O programa executável é uma representação do programa pronta para ser executada pelo sistema. Ele possui trechos de código em linguagem de máquina (prontos para serem executados pelo processador), informações sobre o ponto de entrada do programa (a primeira função que deve ser chamada ao iniciar-se a execução), as constantes do programa e outras informações. Para executar este programa basta digitar o caminho completo do executável (pode ser ./ se estiver no mesmo diretório) e teclar ENTER. Por exemplo:
 
-'
+`
   usuario@maquina$ ./ola.x
   Ola!
   usuario@maquina$
-'
+`
 
 Os passos acima sugerem que o programa gcc converteu o programa em linguagem de alto nível (linguagem C) diretamente para um programa em linguagem de máquina. Entretanto, o gcc é na verdade um programa que articula a chamada de diversos outros programas para realizar a compilação do código fonte. Nesta disciplina, você irá se familiarizar com a construção de softwares em nível mais baixo do que o da linguagem C. Para isso, você deve entender quais as etapas realizadas pelo gcc até chegar na linguagem de máquina, aquela que realmente é entendida pelo processador no momento de executar seu programa.
 
 
-##O _toolchain_ GNU
+### O _toolchain_ GNU
 
 Toolchain é o conjunto de ferramentas do compilador para produzir software para um sistema (no nosso caso, um desktop compatível com a arquitetura Intel x86). Todo compilador começa por traduzir cada arquivo de linguagem C para código de linguagem de montagem (arquivos com a extensão .s no Linux ou .asm na maioria dos compiladores Windows). Geralmente o compilador produz um arquivo em linguagem de montagem para cada arquivo fonte em linguagem de alto nível. Em seguida, uma ferramenta chamada "montador" (ou assembler, em inglês) lerá os arquivos em linguagem de montagem e produzirá um código-objeto (extensão .o no Linux ou .obj na maioria dos compiladores Windows), que possuem código em linguagem de máquina. Existe um arquivo-objeto para cada arquivo em linguagem de montagem. Note que um software grande pode conter diversos arquivos de código fonte, o que irá levar a vários arquivos-objeto durante o processo de compilação. Apesar de possuir código em linguagem de máquina, os arquivos-objeto não são executáveis, pois o código binário ainda está separado em diversos arquivos-objeto e precisa ser "ligado" em um único arquivo, que contenha todo o código. Dessa forma a etapa final consiste em "ligar" todos os arquivos-objeto em um único arquivo final, o executável. Essa etapa é realizada pelo ligador (linker, em inglês).
 
@@ -44,12 +44,13 @@ O ligador irá ler diversos arquivos-objeto como entrada, ligá-los entre si, e 
 Figura 1: O processo de compilação de um programa utilizando as ferramentas da GNU.
 
 
-##Exercício
+## Exercício
 
 Você deverá percorrer o processo de compilação executando cada programa individualmente (compilador C, montador e ligador) até chegar no executável final do programa. O código fonte que você irá utilizar contém dois arquivos C, chamados arquivo1.c e arquivo2.c com o seguinte conteúdo:
 
 arquivo1.c
-`
+
+```
 #include <stdio.h>
 
 void funcao();
@@ -60,19 +61,21 @@ int main() {
     printf("Adeus!\n");
     return 0;
 }
-`
+```
 
 arquivo2.c
 
+```
 #include <stdio.h>
 
 void funcao() {
     printf("Estou no arquivo 2!\n");
 }
+```
 
 Você deverá fazer o processo uma vez manualmente, depois automatizar o processo com um script makefile. Crie uma regra para cada arquivo intermediário, até chegar no arquivo final. Execute a regra final e veja o que acontece.
 
-Tarefa 1
+# Tarefa 1
 
 Para compilar um código-fonte C e produzir o código em linguagem de montagem .s utilize:
 
@@ -119,7 +122,7 @@ Você pode criar várias regras em um mesmo arquivo Makefile. Para executar o sc
 
 O programa make irá executar os comandos associados à regra nome-da-regra, descrita no Makefile. Note que o programa make sempre lê o arquivo de nome Makefile na pasta em que você está e o usa como script. Se você não utilizar esse nome de arquivo (Makefile com "M" maiúsculo), o script irá falhar. Se você invocar o comando make sem parâmetros ele executará a primeira regra do arquivo Makefile.
 
-Tarefa 2
+# Tarefa 2
 
 Agora você criará o arquivo Makefile para gerar um programa a partir do seu código fonte. O programa será construído a partir de 3 arquivos fonte com código escrito na linguagem C. São eles:
 
