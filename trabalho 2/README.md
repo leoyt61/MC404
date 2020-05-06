@@ -61,7 +61,7 @@ Você deve programar o SOUL para atender as chamadas de sistemas descritas a seg
 A tabela abaixo apresenta os dados das syscalls do sistema. Caso ocorra mais de um erro na execução da chamada de sistema, o código retornado deve ser o do erro de maior valor.
 
 |Syscall 	|Parâmetros 	|Retorno|
-|---------------|:-------------:|------:|
+|---------------|---------------|-------|
 *read_ultrasonic_sensor*<br>Código: 16 	|- 	        |a0: Valor obtido na leitura do sensor; -1 caso nenhum objeto tenha sido detectado a menos de 600 centímetros.|
 *set_servo_angles*<br>Código: 17| 	a0: id do servo a ser modificado.<br>a1: ângulo para o servo.| 	a0: -1, caso o ângulo de um dos servos seja inválido (neste caso, a operação toda deve ser cancelada e nenhum ângulo definido). -2, caso o id do servo seja inválido. Caso contrário, retorna 0.|
 *set_engine_torque*<br>Código: 18 |	a0: id do motor (0 ou 1)<br>a1: torque do motor. 	|a0: -1, caso o id do motor seja inválido. 0, caso contrário. A chamada de sistema não deve verificar a validade dos valores de torque.|
