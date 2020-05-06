@@ -72,14 +72,16 @@ Seu código deverá ler uma linha por vez e identificar seu tipo. No nosso exemp
 		* A tripla (f, v, d) deve ser armazenada numa única palavra de memória nesta ordem.
 		* Para isso, f deve ser armazenado nos bits 31..24, v nos bits 23..16, e d nos bits 15..0.
 
-| Arquivo | BPM | Ticks | |------|:------:|------:| | 1 | 105 | 240 | |------|:------:|------:| | 2 | 124 | 384 | |------|:------:|------:| | 3 | 78 | 192 | |------|:------:|------:| | 4 |67 | 480 | |------|:------:|------:| | 5 | 170 | 96 | |------|:------:|------:| | 6 | 114 | 384 | |------|:------:|------:| | 7 | 100 | 96 | |------|:------:|------:| | 8 | 67 | 384 |
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-**Entrada*
+| Arquivo | BPM | Ticks |
+|---------|:---:|------:|
+|    1    | 105 |  240  |
+|    2    | 124 |  384  |
+|    3    |  78 |  192  |
+|    4    |  67 |  480  |
+|    5    | 170 |   96  |
+|    6    | 114 |  384  |
+|    7    | 100 |   96  |
+|    8    |  67 |  384  |
 
 A entrada será o valor dos parâmetros BPM e ticks (na mesma linha separados por um espaço), seguido pelos dados do arquivo Midigram. Para testar seu código, disponibilizamos 8 arquivos Midigram (music.zip), mas você pode gerar novos a partir de músicas no formato MIDI (veja como na última seção deste documento).
 
