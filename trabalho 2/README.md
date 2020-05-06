@@ -62,8 +62,7 @@ A tabela abaixo apresenta os dados das syscalls do sistema. Caso ocorra mais de 
 
 |Syscall 	|Parâmetros 	|Retorno|
 |---------------|:-------------:|------:|
-read_ultrasonic_sensor
-Código: 16 	|- 	        |a0: Valor obtido na leitura do sensor; -1 caso nenhum objeto tenha sido detectado a menos de 600 centímetros.|
+read_ultrasonic_sensor Código: 16 	|- 	        |a0: Valor obtido na leitura do sensor; -1 caso nenhum objeto tenha sido detectado a menos de 600 centímetros.|
 set_servo_angles
 Código: 17 	a0: id do servo a ser modificado.
 a1: ângulo para o servo. 	a0: -1, caso o ângulo de um dos servos seja inválido (neste caso, a operação toda deve ser cancelada e nenhum ângulo definido). -2, caso o id do servo seja inválido. Caso contrário, retorna 0.
