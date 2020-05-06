@@ -62,25 +62,14 @@ A tabela abaixo apresenta os dados das syscalls do sistema. Caso ocorra mais de 
 
 |Syscall 	|Parâmetros 	|Retorno|
 |---------------|:-------------:|------:|
-read_ultrasonic_sensor<br>Código: 16 	|- 	        |a0: Valor obtido na leitura do sensor; -1 caso nenhum objeto tenha sido detectado a menos de 600 centímetros.|
-set_servo_angles
-Código: 17 	a0: id do servo a ser modificado.
-a1: ângulo para o servo. 	a0: -1, caso o ângulo de um dos servos seja inválido (neste caso, a operação toda deve ser cancelada e nenhum ângulo definido). -2, caso o id do servo seja inválido. Caso contrário, retorna 0.
-set_engine_torque
-Código: 18 	a0: id do motor (0 ou 1)
-a1: torque do motor. 	a0: -1, caso o id do motor seja inválido. 0, caso contrário. A chamada de sistema não deve verificar a validade dos valores de torque.
-read_gps
-Código: 19 	a0: Endereço do registro (com três valores inteiros) para armazenar as coordenadas (x, y, z); 	-
-read_gyroscope
-Código: 20 	a0: Endereço do registro (com três valores inteiros) para armazenar os ângulos de Euler (x, y, z); 	-
-get_time
-Código: 21 	- 	a0: tempo do sistema, em milissegundos
-set_time
-Código: 22 	a0: tempo do sistema, em milissegundos 	-
-write
-Código: 64 	a0: Descritor do arquivo
-a1: Endereço de memória do buffer a ser escrito.
-a2: Número de bytes a serem escritos. 	a0: Número de bytes efetivamente escritos.
+*read_ultrasonic_sensor*<br>Código: 16 	|- 	        |a0: Valor obtido na leitura do sensor; -1 caso nenhum objeto tenha sido detectado a menos de 600 centímetros.|
+*set_servo_angles*<br>Código: 17| 	a0: id do servo a ser modificado.<br>a1: ângulo para o servo.| 	a0: -1, caso o ângulo de um dos servos seja inválido (neste caso, a operação toda deve ser cancelada e nenhum ângulo definido). -2, caso o id do servo seja inválido. Caso contrário, retorna 0.|
+*set_engine_torque*<br>Código: 18 |	a0: id do motor (0 ou 1)<br>a1: torque do motor. 	|a0: -1, caso o id do motor seja inválido. 0, caso contrário. A chamada de sistema não deve verificar a validade dos valores de torque.|
+*read_gps*<br>Código: 19| 	a0: Endereço do registro (com três valores inteiros) para armazenar as coordenadas (x, y, z); |	- |
+*read_gyroscope*<br>Código: 20 |	a0: Endereço do registro (com três valores inteiros) para armazenar os ângulos de Euler (x, y, z); |	- |
+*get_time*<br>Código: 21 |	- |	a0: tempo do sistema, em milissegundos |
+*set_time<br>Código: 22 |	a0: tempo do sistema, em milissegundos 	| - |
+*write*<br>Código: 64 | 	a0: Descritor do arquivo<br>a1: Endereço de memória do buffer a ser escrito.<br>a2: Número de bytes a serem escritos.| 	a0: Número de bytes efetivamente escritos. |
 
 ## Iniciando o Sistema
 
