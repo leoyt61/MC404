@@ -34,12 +34,12 @@ input_adress:   # buffer
 
 Saída:
 
-    Sua coordenada (x, y): Valor em metros, <ins>**aproximado**</ins>, representado por números inteiros de 4 dígitos na base decimal e precedido pelo sinal '+' ou '-'.
+* Sua coordenada (x, y): Valor em metros, <ins>**aproximado**</ins>, representado por números inteiros de 4 dígitos na base decimal e precedido pelo sinal '+' ou '-'.
 
 Observações:
 
-    Múltiplos valores impressos ou lidos na mesma linha serão separados por um único espaçamento.
-    Cada linha é finalizada com o caracter '\n'.
+* Múltiplos valores impressos ou lidos na mesma linha serão separados por um único espaçamento.
+* Cada linha é finalizada com o caracter '\n'.
 
 Exemplo
 
