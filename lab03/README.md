@@ -29,7 +29,7 @@ Escreva um programa em linguagem de máquina IAS (usando mapa de memória) para 
 
 Para avaliar seu programa, executaremos o mesmo com 10 entradas diferentes e verificaremos o resultado armazenado no registrador AC.
 
-A avaliação será realizada com o mecanismo de automação de testes do simulador IAS, disponível na página: ![](http://www.ic.unicamp.br/~edson/disciplinas/mc404/2017-2s/abef/IAS-sim/testmodule.html). Veja uma explicação sobre este mecanismo na atividade de ![laboratório 2](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/labs/lab02/lab02.html).
+A avaliação será realizada com o mecanismo de automação de testes do simulador IAS, disponível na página: ![http://www.ic.unicamp.br/~edson/disciplinas/mc404/2017-2s/abef/IAS-sim/testmodule.html](http://www.ic.unicamp.br/~edson/disciplinas/mc404/2017-2s/abef/IAS-sim/testmodule.html). Veja uma explicação sobre este mecanismo na atividade de ![laboratório 2](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/labs/lab02/lab02.html).
 
 O vetor de testes a seguir define os 5 casos de testes públicos desta atividade de laboratório.
 
