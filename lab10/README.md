@@ -15,7 +15,7 @@ Após carregar o dispositivo "Robot Vacuum Cleaner", os seguintes registradores 
 |---------|-----------|
 0xFFFF000C |	O robô irá configurar o torque dos motores 1 e 2 para, respectivamente, (valor >> 16) e (valor & 0xFFFF) N dm (Newton decímetros).|
 0xFFFF0004 |	Quando atribuído valor = 0, inicia a leitura da posição e rotação do robô.<br>Quando o robô terminar de efetuar as leituras, o valor 1 é atribuído a este registrador.|
-0xFFFF0008 |	Quando o valor de 0xFFFF0004 é 1, este registrador armazena: (rot << 20) \| (x << 10) \| z<br>
+0xFFFF0008 |	Quando o valor de 0xFFFF0004 é 1, este registrador armazena: (rot \<\< 20) \| (x \<\< 10) \| z<br>
 * rot é rotação atual do robô medida em graus, com valores entre 0 e 360.<br>
 * x é o valor da posição do robô no eixo x em decímetros.<br>
 * z é o valor da posição do robô no eixo z em decímetros.<br>|
