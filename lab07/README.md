@@ -74,6 +74,11 @@ Seu código deverá ler uma linha por vez e identificar seu tipo. No nosso exemp
 
 | Arquivo | BPM | Ticks | |------|:------:|------:| | 1 | 105 | 240 | |------|:------:|------:| | 2 | 124 | 384 | |------|:------:|------:| | 3 | 78 | 192 | |------|:------:|------:| | 4 |67 | 480 | |------|:------:|------:| | 5 | 170 | 96 | |------|:------:|------:| | 6 | 114 | 384 | |------|:------:|------:| | 7 | 100 | 96 | |------|:------:|------:| | 8 | 67 | 384 |
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 **Entrada*
 
 A entrada será o valor dos parâmetros BPM e ticks (na mesma linha separados por um espaço), seguido pelos dados do arquivo Midigram. Para testar seu código, disponibilizamos 8 arquivos Midigram (music.zip), mas você pode gerar novos a partir de músicas no formato MIDI (veja como na última seção deste documento).
