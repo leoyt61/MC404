@@ -59,9 +59,9 @@ Figura 3: Caixa de texto indicando que o fluxo de execução alcançou um endere
 
 ## Dicas
 
-    Não se esqueça de que o endereço do início da execução é 000, e não 001.
-    Ao saltar para o endereço 0x400, lembre-se de preencher de fato o campo de endereço da instrução com o valor 400, ou este ficará zerado e o programa entrará em loop infinito.
-    Atente-se ao escrever o mapa de memória. Programas com o caractere O (letra) no lugar do 0 (numero zero) causarão erros de execução, com difícil detecção.
-    Procure primeiramente entender as instruções do IAS e escreva seu programa uma instrução por linha, comentando cada linha e entendendo a lógica. Só depois converta esse código para linguagem de máquina usando 2 instruções de 20 bits por linha, no formato do mapa de memória.
-    Para facilitar a implementação, você pode considerar que a multiplicação gera apenas resultados de até 40 bits.
+*Não se esqueça de que o endereço do início da execução é 000, e não 001.
+*Ao saltar para o endereço 0x400, lembre-se de preencher de fato o campo de endereço da instrução com o valor 400, ou este ficará zerado e o programa entrará em loop infinito.
+*Atente-se ao escrever o mapa de memória. Programas com o caractere O (letra) no lugar do 0 (numero zero) causarão erros de execução, com difícil detecção.
+*Procure primeiramente entender as instruções do IAS e escreva seu programa uma instrução por linha, comentando cada linha e entendendo a lógica. Só depois converta esse código para linguagem de máquina *usando 2 instruções de 20 bits por linha, no formato do mapa de memória.
+*Para facilitar a implementação, você pode considerar que a multiplicação gera apenas resultados de até 40 bits.
 
