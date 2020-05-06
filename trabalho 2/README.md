@@ -97,31 +97,26 @@ Após configurar o hardware, o SOUL deve transferir a execução para a aplicaç
 
 Após carregar o dispositivo "Uóli", os seguintes registradores do dispositivo estarão mapeados em endereços de memória. "Valor" representa o valor lido ou escrito no/do endereço de memória.
 
-Endereço 	Tamanho 	Função
-0xFFFF0004 	word 	Quando atribuído valor = 0, inicia a leitura da posição e rotação do robô.
-Quando o robô terminar de efetuar as leituras, o valor 1 é atribuído a este registrador.
-0xFFFF0008 	word 	Quando o valor de 0xFFFF0004 é 1, este registrador armazena o valor da posição do robô no eixo x em decímetros.
-0xFFFF000C 	word 	Quando o valor de 0xFFFF0004 é 1, este registrador armazena o valor da posição do robô no eixo y em decímetros.
-0xFFFF0010 	word 	Quando o valor de 0xFFFF0004 é 1, este registrador armazena o valor da posição do robô no eixo z em decímetros.
-0xFFFF0014 	word 	Quando o valor de 0xFFFF0004 é 1, este registrador armazena o ângulos de Euler que representam a rotação do robô, no formato abaixo , onde x, y e z são os ângulos nos respectivos eixos.
-0xFFFF0018 	half 	A escrita neste registrador configura o torque do motor 2 do Uóli para valor N m (Newton metros).
-0xFFFF001A 	half 	A escrita neste registrador configura o torque do motor 1 do Uóli para valor N m (Newton metros).
-0xFFFF001C 	byte 	A escrita neste registrador configura o ângulo do servo-motor 3 (top) para valor graus.
-0xFFFF001D 	byte 	A escrita neste registrador configura o ângulo do servo-motor 2 (mid) para valor graus.
-0xFFFF001E 	byte 	A escrita neste registrador configura o ângulo do servo-motor 1 (base) para valor graus.
-0xFFFF0020 	word 	Quando atribuído valor = 0, inicia a leitura do sensor de ultrassom.
-Quando o robô terminar de efetuar as leituras, o valor 1 é atribuído a este registrador.
-0xFFFF0024 	word 	Quando o valor de 0xFFFF0020 é 1, este registrador armazena o valor retornado pelo sensor de ultrassom em centímetros.
-Ou, então, o valor -1 caso não hajam objetos dentro do raio de detecção.
-0xFFFF0100 	word 	Se o valor escrito for 0, o GPT não irá gerar interrupções.
-Se o valor escrito for maior do que 0, o GPT aguardará "valor" milissegundos e então gerará uma interrupção. Caso você deseje continuar gerando interrupções a cada "valor" milissegundos, você deve escrever "valor" novamente neste registrador durante o tratamento da interrupção.
-0xFFFF0104 	byte 	Quando valor for 1, indica a existência de uma interrupção não-tratada do GPT.
-Você deve atribuir valor 0 para indicar que a interrupção do GPT foi tratada (faça isso durante o tratamento da interrupção do GPT).
-0xFFFF0108 	byte 	Quando atribuído valor 1, a UART inicia a transmissão do valor armazenado em 0xFFFF0109.
-Quando a transmissão terminar e a UART estiver pronta para iniciar a transmissão de um novo byte, o valor 0 é atribuído ao registrador.
-0xFFFF0109 	byte 	Valor a ser transmitido pela UART.
-0xFFFF010A 	byte 	Quando atribuído valor 1, a UART inicia a recepção de um byte na entrada e o armazena em 0xFFFF010B. Quando o processo de recepção terminar e a UART estiver pronta para iniciar a recepção de um novo byte, o valor 0 é atribuído ao registrador.
-0xFFFF010B 	byte 	Valor recebido pela UART.
+|Endereço 	|Tamanho 	|Função|
+|---------------|---------------|------|
+0xFFFF0004 |	word |	Quando atribuído valor = 0, inicia a leitura da posição e rotação do robô.<br>Quando o robô terminar de efetuar as leituras, o valor 1 é atribuído a este registrador.|
+0xFFFF0008 |	word |	Quando o valor de 0xFFFF0004 é 1, este registrador armazena o valor da posição do robô no eixo x em decímetros. |
+0xFFFF000C |	word |	Quando o valor de 0xFFFF0004 é 1, este registrador armazena o valor da posição do robô no eixo y em decímetros. |
+0xFFFF0010 |	word |	Quando o valor de 0xFFFF0004 é 1, este registrador armazena o valor da posição do robô no eixo z em decímetros.<br>![](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/labs/t2/files/gyro_x_y_z_reg.png) |
+0xFFFF0014 |	word |	Quando o valor de 0xFFFF0004 é 1, este registrador armazena o ângulos de Euler que representam a rotação do robô, no formato abaixo , onde x, y e z são os ângulos nos respectivos eixos. |
+0xFFFF0018 |	half |	A escrita neste registrador configura o torque do motor 2 do Uóli para valor N m (Newton metros).|
+0xFFFF001A |	half |	A escrita neste registrador configura o torque do motor 1 do Uóli para valor N m (Newton metros).|
+0xFFFF001C |	byte |	A escrita neste registrador configura o ângulo do servo-motor 3 (top) para valor graus.|
+0xFFFF001D |	byte |	A escrita neste registrador configura o ângulo do servo-motor 2 (mid) para valor graus.|
+0xFFFF001E |	byte |	A escrita neste registrador configura o ângulo do servo-motor 1 (base) para valor graus.|
+0xFFFF0020 |	word |	Quando atribuído valor = 0, inicia a leitura do sensor de ultrassom.<br>Quando o robô terminar de efetuar as leituras, o valor 1 é atribuído a este registrador.|
+0xFFFF0024 |	word |	Quando o valor de 0xFFFF0020 é 1, este registrador armazena o valor retornado pelo sensor de ultrassom em centímetros.<br>Ou, então, o valor -1 caso não hajam objetos dentro do raio de detecção. |
+0xFFFF0100 |	word |	Se o valor escrito for 0, o GPT não irá gerar interrupções.<br>Se o valor escrito for maior do que 0, o GPT aguardará "valor" milissegundos e então gerará uma interrupção. Caso você deseje continuar gerando interrupções a cada "valor" milissegundos, você deve escrever "valor" novamente neste registrador durante o tratamento da interrupção. |
+0xFFFF0104 |	byte |	Quando valor for 1, indica a existência de uma interrupção não-tratada do GPT.<br>Você deve atribuir valor 0 para indicar que a interrupção do GPT foi tratada (faça isso durante o tratamento da interrupção do GPT). |
+0xFFFF0108 |	byte |	Quando atribuído valor 1, a UART inicia a transmissão do valor armazenado em 0xFFFF0109.<br>Quando a transmissão terminar e a UART estiver pronta para iniciar a transmissão de um novo byte, o valor 0 é atribuído ao registrador.|
+0xFFFF0109 |	byte |	Valor a ser transmitido pela UART.|
+0xFFFF010A |	byte |	Quando atribuído valor 1, a UART inicia a recepção de um byte na entrada e o armazena em 0xFFFF010B.<br>Quando o processo de recepção terminar e a UART estiver pronta para iniciar a recepção de um novo byte, o valor 0 é atribuído ao registrador.|
+0xFFFF010B |	byte |	Valor recebido pela UART.|
 
 ### UART
 
