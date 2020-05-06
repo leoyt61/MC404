@@ -26,10 +26,10 @@ Para montar um programa escrito em linguagem de montagem do RISC-V, originalment
 
 A seguinte sequência de itens sumariza o processo:
 
-    Escrever um código em linguagem de montagem do RISC-V. Sugerimos utilizar o editor de texto Visual Studio Code com a extensão "RISC-V Support", que provê destacador de sintaxe -- syntax highlighting -- para o código);
-    Montar o código escrito na etapa anterior, gerando um arquivo objeto (.o);
-    Executar o linker para converter o arquivo objeto em executável final;
-    Executar o simulador fornecendo o executável.
+1. Escrever um código em linguagem de montagem do RISC-V. Sugerimos utilizar o editor de texto Visual Studio Code com a extensão "RISC-V Support", que provê destacador de sintaxe *-- syntax highlighting --* para o código);
+2. Montar o código escrito na etapa anterior, gerando um arquivo objeto (.o);
+3. Executar o linker para converter o arquivo objeto em executável final;
+4. Executar o simulador fornecendo o executável.
 
 A seguir, as etapas serão detalhadas e exemplificadas.
 
@@ -72,9 +72,9 @@ Note que você pode passar argumentos para a ferramenta através das opções na
 
 Por vezes, encontrar um erro num código-fonte em linguagem de máquina não é trivial. Podemos usar a ferramenta GNU gdb para permitir a execução passo a passo do programa e encontrar o erro mais facilmente. Em geral, as etapas para se depurar um programa com o gdb são:
 
-    Compilar/montar o código-fonte com o parâmetro de depuração (-g) ativado;
-    Ligar o(s) arquivo(s) objeto também com o parâmetro de depuração ativado;
-    Executar o comando gdb seu_programa para invocar o gdb e começar a depuração.
+1. Compilar/montar o código-fonte com o parâmetro de depuração (-g) ativado;
+2. Ligar o(s) arquivo(s) objeto também com o parâmetro de depuração ativado;
+3. Executar o comando gdb seu_programa para invocar o gdb e começar a depuração.
 
 No nosso caso, depuraremos uma aplicação escrita em linguagem de montagem do RISC-V num computador da família x86, logo algumas etapas adicionais são necessárias. Em primeiro lugar, é preciso compilar e ligar seu código com a flag de depuração -g ativada, como já fizemos anteriormente. Precisaremos também de um script adicional, que pode ser obtido com o seguinte comando:
 ```
