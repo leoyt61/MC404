@@ -134,6 +134,6 @@ Embora não seja obrigatório, sugerimos que sejam utilizadas as funções print
 
 ## Uso da infraestrutura do simulador
 
-**IMPORTANTE: Você deve usar a nova versão do simulador, disponibilizada em**![https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/sim3/web/static/sim.html](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/sim3/web/static/sim.html).
+**\*\*\*IMPORTANTE\*\*\*: Você deve usar a nova versão do simulador, disponibilizada em**![https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/sim3/web/static/sim.html](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/sim3/web/static/sim.html).
 
 Para habilitar o simulador do robô **é necessário ir à aba "External Devices", seção "Robot Vacuum Cleaner", e clicar em "Load Device"**. Um novo frame se abrirá contendo o simulador gráfico. Note que o simulador captura seu cursor. Para desativar a captura e fazer uso da interface, é preciso apertar a tecla esc duas vezes.
