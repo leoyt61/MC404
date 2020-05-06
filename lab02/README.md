@@ -26,7 +26,7 @@ A cada vez que você calcular a expressão acima, você descobrirá um valor de 
 
 ## Programando o IAS
 
-No capítulo 5 do documento "Programando o Computador IAS" você encontrará detalhes sobre as operações do IAS e sua codificação em linguagem de máquina e no final desse documento existe um sumário de todas as instruções.
+No capítulo 5 do documento ~["Programando o Computador IAS"](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/anexos/programando_o_IAS.pdf) você encontrará detalhes sobre as operações do IAS e sua codificação em linguagem de máquina e no final desse documento existe um sumário de todas as instruções.
 
 Antes de iniciar a simulação, é necessário carregar o programa na memória principal do IAS. Para carregar as instruções e dados iniciais você deve fornecer um "mapa de memória" na área indicada do simulador. O mapa de memória contém uma lista de valores que serão utilizados para iniciar a memória da máquina antes de a execução iniciar. O mapa de memória é um arquivo no formato texto no qual cada linha especifica o endereço e o valor que deve ser gravado na palavra de memória associada ao endereço. Cada linha consiste de uma coluna representando o endereço e outra representando o valor armazenado na palavra de memória associada àquele endereço, conforme o exemplo abaixo:
 
@@ -49,7 +49,7 @@ Você pode introduzir espaços em branco entre os caracteres da segunda coluna (
 100 00 00 00 88 D8
 ```
 
-Para testar o seu programa você deve usar o Simulador do IAS. A Figura 2 apresenta uma descrição dos elementos da interface do simulador.
+Para testar o seu programa você deve usar o ~[Simulador do IAS](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/IAS-sim/index.html). A Figura 2 apresenta uma descrição dos elementos da interface do simulador.
 ![](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/labs/lab02/IASguide.png)
 Figura 2: Descrição dos elementos da interface do simulador.
 
@@ -59,9 +59,9 @@ Figura 3: Caixa de texto indicando que o fluxo de execução alcançou um endere
 
 ## Dicas
 
-* Não se esqueça de que o endereço do início da execução é 000, e não 001.
+* Não se esqueça de que o **endereço do início da execução é 000**, e não 001.
 * Ao saltar para o endereço 0x400, lembre-se de preencher de fato o campo de endereço da instrução com o valor 400, ou este ficará zerado e o programa entrará em loop infinito.
-* Atente-se ao escrever o mapa de memória. Programas com o caractere O (letra) no lugar do 0 (numero zero) causarão erros de execução, com difícil detecção.
+* Atente-se ao escrever o mapa de memória. Programas com o caractere **O (letra)** no lugar do **0 (numero zero)** causarão erros de execução, com difícil detecção.
 * Procure primeiramente entender as instruções do IAS e escreva seu programa uma instrução por linha, comentando cada linha e entendendo a lógica. Só depois converta esse código para linguagem de máquina * usando 2 instruções de 20 bits por linha, no formato do mapa de memória.
 * Para facilitar a implementação, você pode considerar que a multiplicação gera apenas resultados de até 40 bits.
 
