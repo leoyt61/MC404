@@ -76,7 +76,7 @@ Para encontrar o x correto, basta substituir os dois valores possíveis na Equa�
 ### Processamento dos dados de entrada
 
 * Os dados de entrada são representados como cadeias de caracteres na codificação ASCII. Dessa forma, o valor 2240 é representado como a cadeia de caracteres '2', '2', '4', '0', que possuem os valores numéricos 50, 50, 52, e 48. Seu código deve converter esta cadeia de caracteres para valores numéricos nos registradores. Neste exemplo, a conversão se dá por (50-48)*103 + (50-48)*102 + (52-48)*101 + (48-48)*100 = 224010.
-* '+' != -: Lembre-se de processar o sinal.
+* \+ != -: Lembre-se de processar o sinal.
 
 A imagem a seguir uma tabela com os códigos ASCII.
 ![](https://www.ic.unicamp.br/~edson/disciplinas/mc404/2019-2s/ab/labs/lab06/1024px-Ascii_Table-nocolor.svg.png)
