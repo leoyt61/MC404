@@ -270,3 +270,4 @@ P:  .skip 64
 P2: .skip 64
 C:  .skip 64
 .comm	M,19200000,4 # Reserva um espaço de memória com 19.2MB iniciado no endereço marcalo pelo rótulo M
+
