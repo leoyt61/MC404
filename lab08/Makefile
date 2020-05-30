@@ -1,6 +1,4 @@
-all: lab08
-
-lab08: mapa.o dfs.o
+all: mapa.o dfs.o
 	riscv32-unknown-elf-ld mapa.o dfs.o -o lab08
 mapa.o: mapa.s
 	riscv32-unknown-elf-as mapa.s -o mapa.o
@@ -10,4 +8,4 @@ dfs.o: dfs.s
 	riscv32-unknown-elf-as dfs.s -o dfs.o
 
 clean:
-	rm -rf dfs.o mapa.o mapa.s lab08
+	rm -rf *.o mapa.s lab08
