@@ -12,3 +12,4 @@ _start:
     ecall
 
 string:  .asciz "Leonardo-ra201330\n"  #coloca a string na memoria
+
